@@ -5,10 +5,10 @@
  */
 package lk.ijse.possystem.view;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+//import com.itextpdf.text.Document;
+//import com.itextpdf.text.DocumentException;
+//import com.itextpdf.text.pdf.PdfPTable;
+//import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -208,60 +208,60 @@ public class ManageItemForm extends javax.swing.JFrame {
     private void PrintButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintButton1ActionPerformed
         
         
-        String path ="";
-        JFileChooser jfile = new JFileChooser();
-        jfile.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        
-        int x = jfile.showSaveDialog(this);
-        
-        if (x == JFileChooser.APPROVE_OPTION){
-            
-            path = jfile.getSelectedFile().getPath();
-            
-        }
-        
-        Document doc = new Document();
-        
-        try {
-            PdfWriter.getInstance(doc, new FileOutputStream(path+"ItemDetails.pdf"));
-            doc.open();
-            
-            PdfPTable table = new PdfPTable(4);
-            
-            table.addCell("Code");
-            table.addCell("Description");
-            table.addCell("Unit Price");
-            table.addCell("Quantity");
-            
-            
-            for (int i = 0; i < ItemTable.getRowCount(); i++) {
-                
-                String Code = ItemTable.getValueAt(i, 0).toString();
-                String Description = ItemTable.getValueAt(i, 1).toString();
-                String UnitPrice = ItemTable.getValueAt(i, 2).toString();
-                String Quantity = ItemTable.getValueAt(i, 3).toString();
-                
-                table.addCell(Code);
-                table.addCell(Description);
-                table.addCell(UnitPrice);
-                table.addCell(Quantity);
-                
-                
-                
-            }
-            
-            doc.add(table);
-            
-            JOptionPane.showMessageDialog(null, "PDF saved Successfully","ALERT MESSAGE",JOptionPane.WARNING_MESSAGE);
-            
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (DocumentException ex) {
-            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        doc.close();
+//        String path ="";
+//        JFileChooser jfile = new JFileChooser();
+//        jfile.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//        
+//        int x = jfile.showSaveDialog(this);
+//        
+//        if (x == JFileChooser.APPROVE_OPTION){
+//            
+//            path = jfile.getSelectedFile().getPath();
+//            
+//        }
+//        
+//        Document doc = new Document();
+//        
+//        try {
+//            PdfWriter.getInstance(doc, new FileOutputStream(path+"ItemDetails.pdf"));
+//            doc.open();
+//            
+//            PdfPTable table = new PdfPTable(4);
+//            
+//            table.addCell("Code");
+//            table.addCell("Description");
+//            table.addCell("Unit Price");
+//            table.addCell("Quantity");
+//            
+//            
+//            for (int i = 0; i < ItemTable.getRowCount(); i++) {
+//                
+//                String Code = ItemTable.getValueAt(i, 0).toString();
+//                String Description = ItemTable.getValueAt(i, 1).toString();
+//                String UnitPrice = ItemTable.getValueAt(i, 2).toString();
+//                String Quantity = ItemTable.getValueAt(i, 3).toString();
+//                
+//                table.addCell(Code);
+//                table.addCell(Description);
+//                table.addCell(UnitPrice);
+//                table.addCell(Quantity);
+//                
+//                
+//                
+//            }
+//            
+//            doc.add(table);
+//            
+//            JOptionPane.showMessageDialog(null, "PDF saved Successfully","ALERT MESSAGE",JOptionPane.WARNING_MESSAGE);
+//            
+//            
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (DocumentException ex) {
+//            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//        doc.close();
         
     }//GEN-LAST:event_PrintButton1ActionPerformed
 

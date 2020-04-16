@@ -5,10 +5,10 @@
  */
 package lk.ijse.possystem.view;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+//import com.itextpdf.text.Document;
+//import com.itextpdf.text.DocumentException;
+//import com.itextpdf.text.pdf.PdfPTable;
+//import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -320,60 +320,60 @@ public class ManageCustomer extends javax.swing.JFrame {
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
        
-        String path ="";
-        JFileChooser jfile = new JFileChooser();
-        jfile.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        
-        int x = jfile.showSaveDialog(this);
-        
-        if (x == JFileChooser.APPROVE_OPTION){
-            
-            path = jfile.getSelectedFile().getPath();
-            
-        }
-        
-        Document doc = new Document();
-        
-        try {
-            PdfWriter.getInstance(doc, new FileOutputStream(path+"Doc.pdf"));
-            doc.open();
-            
-            PdfPTable table = new PdfPTable(4);
-            
-            table.addCell("ID");
-            table.addCell("Name");
-            table.addCell("Address");
-            table.addCell("salary");
-            
-            
-            for (int i = 0; i < TableCustomer.getRowCount(); i++) {
-                
-                String id = TableCustomer.getValueAt(i, 0).toString();
-                String Name = TableCustomer.getValueAt(i, 1).toString();
-                String Address = TableCustomer.getValueAt(i, 2).toString();
-                String Salary = TableCustomer.getValueAt(i, 3).toString();
-                
-                table.addCell(id);
-                table.addCell(Name);
-                table.addCell(Address);
-                table.addCell(Salary);
-                
-                
-                
-            }
-            
-            doc.add(table);
-            
-            JOptionPane.showMessageDialog(null, "Pdf saved Successfully","ALERT MESSAGE",JOptionPane.WARNING_MESSAGE);
-            
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (DocumentException ex) {
-            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        doc.close();
+//        String path ="";
+//        JFileChooser jfile = new JFileChooser();
+//        jfile.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//        
+//        int x = jfile.showSaveDialog(this);
+//        
+//        if (x == JFileChooser.APPROVE_OPTION){
+//            
+//            path = jfile.getSelectedFile().getPath();
+//            
+//        }
+//        
+//        Document doc = new Document();
+//        
+//        try {
+//            PdfWriter.getInstance(doc, new FileOutputStream(path+"Doc.pdf"));
+//            doc.open();
+//            
+//            PdfPTable table = new PdfPTable(4);
+//            
+//            table.addCell("ID");
+//            table.addCell("Name");
+//            table.addCell("Address");
+//            table.addCell("salary");
+//            
+//            
+//            for (int i = 0; i < TableCustomer.getRowCount(); i++) {
+//                
+//                String id = TableCustomer.getValueAt(i, 0).toString();
+//                String Name = TableCustomer.getValueAt(i, 1).toString();
+//                String Address = TableCustomer.getValueAt(i, 2).toString();
+//                String Salary = TableCustomer.getValueAt(i, 3).toString();
+//                
+//                table.addCell(id);
+//                table.addCell(Name);
+//                table.addCell(Address);
+//                table.addCell(Salary);
+//                
+//                
+//                
+//            }
+//            
+//            doc.add(table);
+//            
+//            JOptionPane.showMessageDialog(null, "Pdf saved Successfully","ALERT MESSAGE",JOptionPane.WARNING_MESSAGE);
+//            
+//            
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (DocumentException ex) {
+//            Logger.getLogger(ManageCustomer.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//        doc.close();
         
         
     }//GEN-LAST:event_printButtonActionPerformed
